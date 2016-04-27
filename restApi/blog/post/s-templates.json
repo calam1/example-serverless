@@ -1,0 +1,64 @@
+{
+  "apiRequestPostCreateTemplate": {
+    "application/json" : {
+      "operation": "create",
+      "tableName": "blog-posts",
+      "payload": {
+        "Item": {
+          "content": "$input.json('$')"
+        }
+      }
+    }
+  },
+  "apiRequestPostReadTemplate": {
+    "application/json" : {
+      "operation": "read",
+      "tableName": "blog-posts",
+      "payload": {
+        "Key": {
+          "postId": "$input.params('postId')"
+        }
+      }
+    }
+  },
+  "apiRequestPostUpdateTemplate": {
+    "application/json" : {
+      "operation": "update",
+      "tableName": "blog-posts",
+      "payload": {
+        "Key": {
+          "postId": "$input.params('postId')"
+        },
+        "UpdateExpression": "set content = :c",
+        "ExpressionAttributeValues": {
+          ":c": "$input.json('$')"
+        }
+      }
+    }
+  },
+  "apiRequestPostDeleteTemplate": {
+    "application/json" : {
+      "operation": "delete",
+      "tableName": "blog-posts",
+      "payload": {
+        "Key": {
+          "postId": "$input.params('postId')"
+        },
+        "ConditionExpression": "postId = :p",
+        "ExpressionAttributeValues": {
+          ":p": "$input.params('postId')"
+        }
+      }
+    }
+  },
+  "apiRequestPostListTemplate": {
+    "application/json": {
+      "operation": "list",
+      "tableName": "blog-posts",
+      "payload": {}
+    }
+  },
+  "apiResponsePostCreateTemplate": "{\"postId\":\"$input.path('$').postId\"}",
+  "apiResponsePostReadTemplate": "{\"post\": {\"postId\":\"$input.path('$').Item.postId\", \"content\":{\"user\":\"$input.path('$').Item.content.user\",\"message\":\"$input.path('$').Item.content.message\"}}}",
+  "apiResponsePostListTemplate": "{\"posts\" : [#foreach($post in $input.path('$').Items){\"postId\" : \"$post.postId\",\"content\" : { \"user\":\"$post.content.user\",\"message\":\"$post.content.message\" }}#if($foreach.hasNext),#end #end ] }"
+}

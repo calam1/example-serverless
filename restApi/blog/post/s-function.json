@@ -1,0 +1,132 @@
+{
+  "name": "post",
+  "runtime": "nodejs4.3",
+  "description": "Serverless Lambda function for project: example-serverless","customName": false,
+  "customRole": false,
+  "handler": "example-serverless/restApi/blog/post/handler.handler",
+  "timeout": 6,
+  "memorySize": 1024,
+  "custom": {
+    "excludePatterns": [],
+    "envVars": []
+  },
+  "endpoints": [
+    {
+      "path": "blog/post",
+      "method": "GET",
+      "type": "AWS",
+      "authorizationType": "none",
+      "apiKeyRequired": false,
+      "requestParameters": {
+        "integration.request.querystring.postId": "method.request.querystring.postId"
+      },
+      "requestTemplates": "$${apiRequestPostReadTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates": {
+            "application/json": "$${apiResponsePostReadTemplate}"
+          }
+        }
+      }
+    },
+    {
+      "path": "blog/post",
+      "method": "POST",
+      "type": "AWS",
+      "authorizationType": "none",
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": "$${apiRequestPostCreateTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates":  {
+            "application/json": "$${apiResponsePostCreateTemplate}"
+          }
+        }
+      }
+    },
+    {
+      "path": "post",
+      "method": "PUT",
+      "type": "AWS",
+      "authorizationType": "none",
+      "apiKeyRequired": false,
+      "requestParameters": {
+        "integration.request.querystring.postId": "method.request.querystring.postId"
+      },
+      "requestTemplates": "$${apiRequestPostUpdateTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates":  {
+            "application/json": ""
+          }
+        }
+      }
+    },
+    {
+      "path": "post",
+      "method": "DELETE",
+      "type": "AWS",
+      "authorizationType": "none",
+      "apiKeyRequired": false,
+      "requestParameters": {
+        "integration.request.querystring.postId": "method.request.querystring.postId"
+      },
+      "requestTemplates": "$${apiRequestPostDeleteTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates":  {
+            "application/json": ""
+          }
+        }
+      }
+    },
+    {
+      "path": "posts",
+      "method": "GET",
+      "type": "AWS",
+      "authorizationType": "none",
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": "$${apiRequestPostListTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates": {
+            "application/json": "$${apiResponsePostListTemplate}"
+          }
+        }
+      }
+    }
+  ],
+  "events": []
+}
