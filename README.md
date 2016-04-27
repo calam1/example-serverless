@@ -2,7 +2,6 @@ A working example of this project.
 Added some examples from this tutorial to this example
 
 Todo for the blog endpoint:
-* The post does not take any values - fix that
 * get the put to work
 * get the delete to work
 * ...
