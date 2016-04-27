@@ -1,3 +1,17 @@
+A working example of this project.
+
+Todo for the blog:
+* The post does not take any values - fix that
+* get the put to work
+* get the delete to work
+* ...
+
+
+
+
+
+
+
 #Serverless Starter
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
