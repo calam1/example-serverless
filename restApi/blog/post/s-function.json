@@ -1,11 +1,13 @@
 {
   "name": "post",
   "runtime": "nodejs4.3",
-  "description": "Serverless Lambda function for project: example-serverless","customName": false,
+  "description": "Serverless Lambda function for project: example-serverless",
+  "customName": false,
   "customRole": false,
   "handler": "example-serverless/restApi/blog/post/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
+  "authorizer": {},
   "custom": {
     "excludePatterns": [],
     "envVars": []
@@ -16,6 +18,7 @@
       "method": "GET",
       "type": "AWS",
       "authorizationType": "none",
+      "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {
         "integration.request.querystring.postId": "method.request.querystring.postId"
@@ -40,6 +43,7 @@
       "method": "POST",
       "type": "AWS",
       "authorizationType": "none",
+      "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": "$${apiRequestPostCreateTemplate}",
@@ -51,8 +55,8 @@
           "statusCode": "200",
           "responseParameters": {},
           "responseModels": {},
-          "responseTemplates":  {
-            "application/json": "$${apiResponsePostCreateTemplate}"
+          "responseTemplates": {
+            "application/json": ""
           }
         }
       }
@@ -62,6 +66,7 @@
       "method": "PUT",
       "type": "AWS",
       "authorizationType": "none",
+      "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {
         "integration.request.querystring.postId": "method.request.querystring.postId"
@@ -75,7 +80,7 @@
           "statusCode": "200",
           "responseParameters": {},
           "responseModels": {},
-          "responseTemplates":  {
+          "responseTemplates": {
             "application/json": ""
           }
         }
@@ -86,6 +91,7 @@
       "method": "DELETE",
       "type": "AWS",
       "authorizationType": "none",
+      "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {
         "integration.request.querystring.postId": "method.request.querystring.postId"
@@ -99,7 +105,7 @@
           "statusCode": "200",
           "responseParameters": {},
           "responseModels": {},
-          "responseTemplates":  {
+          "responseTemplates": {
             "application/json": ""
           }
         }
@@ -110,6 +116,7 @@
       "method": "GET",
       "type": "AWS",
       "authorizationType": "none",
+      "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": "$${apiRequestPostListTemplate}",
@@ -128,5 +135,14 @@
       }
     }
   ],
-  "events": []
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
 }
