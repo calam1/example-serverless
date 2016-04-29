@@ -10,6 +10,7 @@
     "url": "https://github.com/serverless/serverless-starter/issues"
   },
   "dependencies": {
+    "ajv": "^4.0.4",
     "dynamodb": "^0.3.6",
     "node-uuid": "^1.4.7",
     "serverless-helpers-js": "^0.2.0",
