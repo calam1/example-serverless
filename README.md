@@ -1,10 +1,13 @@
-###A working example of https://github.com/serverless/serverless-starter project.
+####A working example of https://github.com/serverless/serverless-starter project.
 Follow the instructions of the following section titled "Serverless Starter"  to install the node/npm and serverless framework if you do not already have these installed
 
-###Serverless Framework Documentation
+####Serverless github source 
+https://github.com/serverless/serverless/
+
+####Serverless Framework Documentation
 http://docs.serverless.com/
 
-###Serverless Plugins
+####Serverless Plugins
 I have added the following plugins to the project so far, there are more listed on Serverless github page:
 ```
 * https://github.com/serverless/serverless-meta-sync -  syncs the _meta stage vars(not common) in s3 for team sharing
