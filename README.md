@@ -1,16 +1,35 @@
-A working example of this project.
-Added some examples from this tutorial to this example
+###A working example of https://github.com/serverless/serverless-starter project.
+Follow the instructions of the following section titled "Serverless Starter"  to install the node/npm and serverless framework if you do not already have these installed
 
-Todo for the blog endpoint:
-* get the put to work
-* get the delete to work
-* ...
+###Serverless Framework Documentation
+http://docs.serverless.com/
 
+###Serverless Plugins
+I have added the following plugins to the project so far, there are more listed on Serverless github page:
+```
+* https://github.com/serverless/serverless-meta-sync -  syncs the _meta stage vars(not common) in s3 for team sharing
+* https://github.com/Nopik/serverless-lambda-prune-plugin - prunes old versions of functions for space considerations
+```
 
+####AWS API Gateway, AWS Lambda, AWS DynamoDB example
+I have added a working example of this tutorial https://github.com/markusklems/serverless-node-dynamodb-example, converted to work on serverless v0.5.5; yes hard to believe that tutorial is already out of date, lots of good changes happening in the serverless framework
 
+####Example of json validation using ajv 
+In the example-serverless/restApi/blog/post/handler.js class is an example of json validation in the lambda, it is not idiomatic or even good :) Just an example using ajv for json validation.
 
+####Example of adding a db write, scan, etc policy to the lambda role and the creation of a dynamoDB in CloudFormation
+https://github.com/calam1/example-serverless/blob/master/s-resources-cf.json
+Got the idea from here - https://github.com/SC5/aws-serverless-hackathon-backend/blob/master/s-resources-cf.json
 
+####Gitter chatroom - great community
+https://gitter.im/serverless/serverless
 
+####Improvements I think that are needed, from my observations
+The command "sls project remove" or really any remove command for functions, resources, etc, are flaky.  Especially in the API Gateway, this seems to be an issue due to the Promises being used.  It feels like there is a race condition, thus many times you see failures when you do a remove, especially in the API Gateway.  I will have to play with it more, and if I can substantiate my findings I will submit an issue in Github.
+
+-----------------------------------
+
+#####The following is the README page from - https://github.com/serverless/serverless-starter
 
 #Serverless Starter
 
