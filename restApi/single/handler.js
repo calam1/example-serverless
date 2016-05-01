@@ -11,12 +11,7 @@
 var lib = require('../lib');
 
 // Lambda Handler
-module.exports.handler = function(event, context) {
-  var error = new Error('The requested resource was not found, I did this on purpose');
-  context.done(error);
-
-
-  // lib.singleAll(event, function(error, response) {
-  //   return context.done(error, response);
-  // });
+lib.singleAll(event, function(error, response) {
+    return context.done(error, response);
+});
 };

@@ -3,36 +3,8 @@
 var doc = require('dynamodb-doc');
 var dynamo = new doc.DynamoDB();
 
-// all the ajv stuff is for json validation, this is not idiomatic or good, but just an example
-var Ajv = require('ajv');
-var ajv = Ajv({
-    allErrors: true
-});
-
-var schema = {
-    "required": [ "name", "age" ],
-    "properties": {
-        "name": {
-            "type": "string"
-        },
-        "age": {
-            "type": "number",
-            "maximum": 3
-        }
-    }
-};
-
-var validate = ajv.compile(schema);
-
-function isValidJson(data) {
-    return validate(data);
-}
-
 // Require Serverless ENV vars - this may or may not be needed I havent seen why it is
 var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
-
-// Require Logic
-var lib = require('../../lib');
 
 // Lambda Handler
 module.exports.handler = function(event, context) {
@@ -49,13 +21,17 @@ module.exports.handler = function(event, context) {
             console.log('debug', JSON.stringify(event.payload, null, 2));
             console.log('debug 2', JSON.stringify(event.payload.Item.content, null, 2));
 
-            if (!isValidJson(event.payload.Item.content)) {
+            var validator = require('../../lib/validateCreateJson.js');
+            if (!validator.isValidJson(event.payload.Item.content)) {
                 context.fail(new Error('Invalid Json' + event.payload.Item.content));
+            } else {
+                console.log("valid JSON for create");
             }
 
             var uuid = require('node-uuid');
             event.payload.Item.postId = uuid.v1();
             dynamo.putItem(event.payload, context.done)
+
             // the following does not insert data
             // dynamo.putItem(event.payload, context.succeed({
             //     "postId": event.payload.Item.postId
