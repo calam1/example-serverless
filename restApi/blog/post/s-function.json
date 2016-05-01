@@ -62,7 +62,7 @@
       }
     },
     {
-      "path": "post",
+      "path": "blog/post",
       "method": "PUT",
       "type": "AWS",
       "authorizationType": "none",
@@ -87,7 +87,7 @@
       }
     },
     {
-      "path": "post",
+      "path": "blog/post",
       "method": "DELETE",
       "type": "AWS",
       "authorizationType": "none",
@@ -112,7 +112,7 @@
       }
     },
     {
-      "path": "posts",
+      "path": "blog/posts",
       "method": "GET",
       "type": "AWS",
       "authorizationType": "none",

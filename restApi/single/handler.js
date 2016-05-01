@@ -8,10 +8,12 @@
  */
 
 // Require Logic
-var lib = require('../lib');
+var lib = require('../lib/index.js');
 
 // Lambda Handler
-lib.singleAll(event, function(error, response) {
+module.exports.handler = function(event, context) {
+
+  lib.singleAll(event, function(error, response) {
     return context.done(error, response);
-});
+  });
 };

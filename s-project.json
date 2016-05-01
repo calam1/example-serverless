@@ -1,11 +1,11 @@
 {
   "name": "example-serverless",
   "custom": {
-      "meta": {
-        "name": "example-serverless-template",
-        "region" : "us-east-1"
-      }
-    },
+    "meta": {
+      "name": "example-serverless-template",
+      "region": "us-east-1"
+    }
+  },
   "plugins": [
     "serverless-optimizer-plugin",
     "serverless-meta-sync",
