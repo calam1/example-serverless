@@ -26,16 +26,15 @@ module.exports.handler = function(event, context) {
                 context.fail(new Error('Invalid Json' + event.payload.Item.content));
             } else {
                 console.log("valid JSON for create");
+                var uuid = require('node-uuid');
+                event.payload.Item.postId = uuid.v1();
+                dynamo.putItem(event.payload, context.done)
+
+                // the following does not insert data - try it again later
+                // dynamo.putItem(event.payload, context.succeed({
+                //     "postId": event.payload.Item.postId
+                // }));
             }
-
-            var uuid = require('node-uuid');
-            event.payload.Item.postId = uuid.v1();
-            dynamo.putItem(event.payload, context.done)
-
-            // the following does not insert data
-            // dynamo.putItem(event.payload, context.succeed({
-            //     "postId": event.payload.Item.postId
-            // }));
             break;
         case 'read':
             dynamo.getItem(event.payload, context.done);
