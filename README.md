@@ -15,6 +15,8 @@ I have added the following plugins to the project so far, there are more listed 
 ```
 * https://github.com/serverless/serverless-meta-sync -  syncs the _meta stage vars(not common) in s3 for team sharing
 * https://github.com/Nopik/serverless-lambda-prune-plugin - prunes old versions of functions for space considerations
+* https://github.com/martinlindenberg/serverless-plugin-sns - provides subscription for sns topics
+* https://github.com/martinlindenberg/serverless-plugin-alerting - configure alerting and subscription
 ```
 
 ####AWS API Gateway, AWS Lambda, AWS DynamoDB example
