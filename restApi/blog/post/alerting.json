@@ -1,0 +1,39 @@
+[
+    {
+        "notificationTopicStageMapping": {
+            "qa": "blog-post-topic-qa"
+        },
+        "alerts": {
+            "Duration": {
+                "enabled": true,
+                "alarmNamespace": "AWS/Lambda",
+                "description": "Alarm if duration of the importer is above 500ms",
+                "alarmStatisticType": "Sum",
+                "alarmPeriod": "60",
+                "alarmThreshold": "1",
+                "comparisonOperator": "GreaterThanOrEqualToThreshold",
+                "evaluationPeriod": "1"
+            },
+            "Errors": {
+                "enabled": true,
+                "alarmNamespace": "AWS/Lambda",
+                "description": "Alarm if function returns an error",
+                "alarmStatisticType": "Sum",
+                "alarmPeriod": "60",
+                "alarmThreshold": "1",
+                "comparisonOperator": "GreaterThanOrEqualToThreshold",
+                "evaluationPeriod": "1"
+            },
+            "Throttles": {
+                "enabled": true,
+                "alarmNamespace": "AWS/Lambda",
+                "description": "Alarm if function has more than 5 throttled requests",
+                "alarmStatisticType": "Sum",
+                "alarmPeriod": "60",
+                "alarmThreshold": "5",
+                "comparisonOperator": "GreaterThanOrEqualToThreshold",
+                "evaluationPeriod": "1"
+            }
+        }
+    }
+]
