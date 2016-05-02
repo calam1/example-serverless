@@ -8,6 +8,9 @@ Follow the instructions of the following section titled "Serverless Starter"  to
 * http://docs.serverless.com/
 
 ####Serverless Plugins
+List of available plugins
+https://www.npmjs.com/browse/keyword/serverless%20plugins
+
 I have added the following plugins to the project so far, there are more listed on Serverless github page:
 ```
 * https://github.com/serverless/serverless-meta-sync -  syncs the _meta stage vars(not common) in s3 for team sharing
