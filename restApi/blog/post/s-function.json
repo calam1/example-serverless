@@ -144,8 +144,5 @@
   "vpc": {
     "securityGroupIds": [],
     "subnetIds": []
-  },
-  "sns": {
-    "topic": "${project}-blog-post-topic-${stage}"
   }
 }
