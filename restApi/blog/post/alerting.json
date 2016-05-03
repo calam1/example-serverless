@@ -1,7 +1,7 @@
 [
     {
         "notificationTopicStageMapping": {
-            "qa": "blog-post-topic-qa"
+            "dev": "blog-post-topic-dev"
         },
         "alerts": {
             "Duration": {

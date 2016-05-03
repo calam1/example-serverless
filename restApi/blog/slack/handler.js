@@ -22,7 +22,7 @@ var ALARM_CONFIG = [
 ];
 
 var SLACK_CONFIG = {
-  path: "https://hooks.slack.com/services/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",
+  path: process.env.SLACK_PATH,
 };
 
 var http = require ('https');
