@@ -1,0 +1,28 @@
+{
+  "name": "slack",
+  "runtime": "nodejs4.3",
+  "description": "Serverless Lambda function for project: serverless-starter, publish sns to slack channels",
+  "customName": false,
+  "customRole": false,
+  "handler": "slack/handler.handler",
+  "timeout": 6,
+  "memorySize": 1024,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": [],
+    "envVars": [],
+    "optimize": true
+  },
+  "endpoints": [],
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}",
+    "SLACK_ERROR_CHANNEL": "${slack_error_channel}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}
