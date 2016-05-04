@@ -26,7 +26,7 @@ I have added a working example of this tutorial https://github.com/markusklems/s
 In the example-serverless/restApi/blog/post/handler.js class is an example of json validation in the lambda, it is not idiomatic or even good :) Just an example using ajv for json validation.
 
 ####Example of adding a db write, scan, etc policy to the lambda role and the creation of a dynamoDB in CloudFormation
-https://github.com/calam1/example-serverless/blob/master/s-resources-cf.json
+* https://github.com/calam1/example-serverless/blob/master/s-resources-cf.json
 * Got the idea from here - https://github.com/SC5/aws-serverless-hackathon-backend/blob/master/s-resources-cf.json
 
 ####Example of creating alarms on a function and pushes the events onto an SNS topic
@@ -38,6 +38,7 @@ https://github.com/calam1/example-serverless/blob/master/s-resources-cf.json
 * https://github.com/ashiina/aws-lambda-cloudwatch-slack
 * look at restApi/blog/slack/s-function.json - look at the "event" node for how to set up the event source for the stack lambda
 * deploy function before you deploy the event, otherwise you will have an error
+* may have been possible to use this plugin to simplify the subscription - https://github.com/martinlindenberg/serverless-plugin-sns
 
 ####Gitter chatroom - great community
 * https://gitter.im/serverless/serverless
