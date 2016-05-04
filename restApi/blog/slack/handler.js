@@ -14,7 +14,7 @@ var ALARM_CONFIG = [
   },
   {
     condition: "Errors",
-    channel: process.env.SLACK_ERROR_CHANNEL,
+    channel: process.env.SLACK_ALERT_CHANNEL,
     mention: "<@channel> ",
     color: "#F35A00",
     severity: "CRITICAL"

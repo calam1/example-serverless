@@ -14,12 +14,21 @@
     "optimize": true
   },
   "endpoints": [],
-  "events": [],
+  "events": [
+    {
+      "name": "blog-post-topic-dev",
+      "type": "sns",
+      "config": {
+        "topicName": "blog-post-topic-dev",
+        "enabled": true
+      }
+    }
+  ],
   "environment": {
     "SERVERLESS_PROJECT": "${project}",
     "SERVERLESS_STAGE": "${stage}",
     "SERVERLESS_REGION": "${region}",
-    "SLACK_ERROR_CHANNEL": "${slack_error_channel}",
+    "SLACK_ALERT_CHANNEL": "${slack_alert_channel}",
     "SLACK_PATH": "${slack_path}"
   },
   "vpc": {
