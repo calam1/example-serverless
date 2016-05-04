@@ -29,6 +29,16 @@ In the example-serverless/restApi/blog/post/handler.js class is an example of js
 https://github.com/calam1/example-serverless/blob/master/s-resources-cf.json
 * Got the idea from here - https://github.com/SC5/aws-serverless-hackathon-backend/blob/master/s-resources-cf.json
 
+####Example of creating alarms on a function and pushes the events onto an SNS topic
+* Installed this plugin: https://github.com/martinlindenberg/serverless-plugin-alerting
+* look at restApi/blog/post/alerting.json - these are the alarms that I set, you can also do global alarms and filters look at the authors github repo
+
+####Example of a lambda that listens to the alert topic discussed above and posts to slack
+* http://ashiina.github.io/2015/06/cloudwatch-lambda-slack
+* https://github.com/ashiina/aws-lambda-cloudwatch-slack
+* look at restApi/blog/slack/s-function.json - look at the "event" node for how to set up the event source for the stack lambda
+* deploy function before you deploy the event, otherwise you will have an error
+
 ####Gitter chatroom - great community
 * https://gitter.im/serverless/serverless
 
