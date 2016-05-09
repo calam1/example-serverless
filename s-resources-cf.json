@@ -45,7 +45,8 @@
               "Action": [
                 "dynamodb:Scan",
                 "dynamodb:PutItem",
-                "dynamodb:DeleteItem"
+                "dynamodb:DeleteItem",
+                "dynamodb:GetItem"
               ],
               "Resource": "arn:aws:dynamodb:${region}:*:*"
             }
