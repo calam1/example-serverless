@@ -6,7 +6,7 @@ var ajv = Ajv({
 });
 var schema = {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "required": [ "name", "age" ],
+    "required": [ "fname", "age" ],
     "properties": {
         "name": {
             "type": "string"

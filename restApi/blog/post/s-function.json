@@ -21,7 +21,7 @@
       "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {
-        "integration.request.querystring.postId": "method.request.querystring.postId"
+        "integration.request.querystring.firstName": "method.request.querystring.firstName"
       },
       "requestTemplates": "$${apiRequestPostReadTemplate}",
       "responses": {
