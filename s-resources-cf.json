@@ -68,6 +68,10 @@
           {
             "AttributeName": "postId",
             "AttributeType": "S"
+          },
+          {
+            "AttributeName": "fname",
+            "AttributeType": "S"
           }
         ],
         "KeySchema": [
@@ -80,7 +84,25 @@
           "ReadCapacityUnits": 1,
           "WriteCapacityUnits": 1
         },
-        "TableName": "${tableName}-${stage}"
+        "TableName": "${tableName}-${stage}",
+        "GlobalSecondaryIndexes": [
+          {
+            "IndexName": "fname-index",
+            "KeySchema": [
+              {
+                "AttributeName": "fname",
+                "KeyType": "HASH"
+              }
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            },
+            "ProvisionedThroughput": {
+              "ReadCapacityUnits": 1,
+              "WriteCapacityUnits": 1
+            }
+          }
+        ]
       }
     }
   },
