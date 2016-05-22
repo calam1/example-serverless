@@ -28,6 +28,7 @@ In the example-serverless/restApi/blog/post/handler.js class is an example of js
 ####Example of adding a db write, scan, etc policy to the lambda role and the creation of a dynamoDB in CloudFormation
 * https://github.com/calam1/example-serverless/blob/master/s-resources-cf.json
 * Got the idea from here - https://github.com/SC5/aws-serverless-hackathon-backend/blob/master/s-resources-cf.json
+* Also if you look at the s-resources.json file you will see an example of a global secondary index get created.  Lokk at example-serverless/restApi/blog/post/handler.js ("case: 'read') for usage of the global secondary index in a query
 
 ####Example of creating alarms on a function and pushes the events onto an SNS topic
 * Installed this plugin: https://github.com/martinlindenberg/serverless-plugin-alerting
